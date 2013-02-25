@@ -1,2 +1,4 @@
-print "alla"
+
 print "test"
+print "saluté"
+
