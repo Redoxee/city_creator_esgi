@@ -12,8 +12,9 @@ class Building(Plot):
     '''
 
 
-    def __init__(self):
+    def __init__(self, listCorner, height):
         '''
         Constructor
         '''
-        
+        super.__init__(listCorner)
+        self.height = height;
