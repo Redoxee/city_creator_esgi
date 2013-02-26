@@ -1,13 +1,13 @@
 '''
 Created on 26 févr. 2013
 
-@author: Antoine
+@author: Dylan
 '''
-
-class Field:
+class District:
     '''
     classdocs
     '''
+
 
     def __init__(self):
         '''
@@ -15,7 +15,7 @@ class Field:
         '''
         self.boundaries = []
         self.networks = []
-        self.districts = []
+        self.blocks = []
         
     def getBoundaries(self):
         return self.boundaries
@@ -35,9 +35,8 @@ class Field:
     def clearNetwork(self):
         self.networks = []
     
-    def getDistricts(self):
-        return self.districts
+    def getblocks(self):
+        return self.blocks
     
-    def setDistricts(self, districts):
-        self.districts = districts
-        
+    def setblocks(self, blocks):
+        self.blocks = blocks
