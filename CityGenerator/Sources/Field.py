@@ -14,28 +14,31 @@ class Field:
         '''
         Constructor
         '''
+        self.boundaries = []
+        self.networks = []
+        self.blocks = []
         
     def getBoundaries(self):
-        return
+        return self.boundaries
         
-    def setBoundaries(self):
-        return
+    def setBoundaries(self, boundaries):
+        self.boundaries = boundaries
     
     def getNetworks(self):
-        return
+        return self.networks
     
-    def addNetwork(self):
-        return
+    def addNetwork(self, network):
+        self.networks.append(network)
     
-    def setNetworks(self):
-        return
+    def setNetworks(self, networks):
+        self.networks = networks
     
     def clearNetwork(self):
-        return
+        self.networks = []
     
     def getBlocks(self):
-        return
+        return self.blocks
     
-    def setBlocks(self):
-        return
+    def setBlocks(self, blocks):
+        self.blocks = blocks
         

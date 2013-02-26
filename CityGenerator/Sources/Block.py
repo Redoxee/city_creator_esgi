@@ -15,12 +15,13 @@ class Block:
         Constructor
         '''
         self.canBuild = True
+        self.plots = []
         
     def getCanBuild(self):
         return self.canBuild
     
     def getPlots(self):
-        return
+        return self.plots
     
-    def setPlots(self):
-        return
+    def setPlots(self, plots):
+        self.plots = plots
