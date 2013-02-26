@@ -10,8 +10,6 @@ class Network:
     '''
 
 
-    def __init__(self):
-        '''
-        Constructor
-        '''
-        
+    def __init__(self, wayPoints):
+        self.wayPoints = wayPoints
+    
