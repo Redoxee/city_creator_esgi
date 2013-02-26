@@ -9,11 +9,11 @@ class Field:
     classdocs
     '''
 
-    def __init__(self):
+    def __init__(self, boundaries):
         '''
         Constructor
         '''
-        self.boundaries = []
+        self.boundaries = boundaries
         self.networks = []
         self.districts = []
         
