@@ -9,14 +9,13 @@ class Field:
     classdocs
     '''
 
-
     def __init__(self):
         '''
         Constructor
         '''
         self.boundaries = []
         self.networks = []
-        self.blocks = []
+        self.districts = []
         
     def getBoundaries(self):
         return self.boundaries
@@ -36,9 +35,9 @@ class Field:
     def clearNetwork(self):
         self.networks = []
     
-    def getBlocks(self):
-        return self.blocks
+    def getDistricts(self):
+        return self.districts
     
-    def setBlocks(self, blocks):
-        self.blocks = blocks
+    def setDistricts(self, districts):
+        self.districts = districts
         

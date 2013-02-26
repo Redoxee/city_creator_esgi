@@ -10,10 +10,11 @@ class City:
     '''
 
 
-    def __init__(self):
+    def __init__(self, field):
         '''
         Constructor
         '''
+        self.field = field
         
     def serialize(self):
         return
@@ -22,7 +23,8 @@ class City:
         return
     
     def getField(self):
-        return
+        return self.field
     
-    def setField(self):
-        return
+    def setField(self, field):
+        self.field = field
+        
