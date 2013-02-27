@@ -1,6 +1,5 @@
 
 from Plot import Plot
-
 class Building(Plot):
 
 
