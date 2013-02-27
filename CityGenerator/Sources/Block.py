@@ -1,7 +1,6 @@
 
 class Block:
 
-
     def __init__(self):
         self.canBuild = True
         self.plots = []

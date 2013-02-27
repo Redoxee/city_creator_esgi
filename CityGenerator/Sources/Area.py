@@ -1,5 +1,5 @@
 
-import Plot
+from Plot import Plot
 
 class Area(Plot):
     '''
@@ -7,8 +7,8 @@ class Area(Plot):
     '''
 
 
-    def __init__(self):
+    def __init__(self, listCorners):
         '''
         Constructor
         '''
-        
+        Plot.__init__(self, listCorners)

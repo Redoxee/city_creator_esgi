@@ -1,5 +1,5 @@
 from Coordinates import Coordinates
-class Plot(object):
+class Plot:
     def __init__(self, listCorners):
         self.setListCorners(listCorners);
     def setListCorners(self, listCorners):

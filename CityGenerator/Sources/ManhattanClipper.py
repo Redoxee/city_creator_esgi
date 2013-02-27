@@ -1,11 +1,11 @@
 
-import FieldClipper
+from FieldClipper import FieldClipper
 
 class ManhattanClipper(FieldClipper):
 
 
     def __init__(self, field):
-        super.__init__(field);
+        FieldClipper.__init__(self, field);
         
     def buildDistricts(self):
         pass
