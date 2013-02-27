@@ -1,9 +1,3 @@
-'''
-Created on 26 févr. 2013
-
-@author: Antoine
-'''
-
 import Network
 
 class Road(Network):

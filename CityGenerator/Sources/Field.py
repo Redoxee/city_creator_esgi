@@ -1,9 +1,3 @@
-'''
-Created on 26 févr. 2013
-
-@author: Antoine
-'''
-
 class Field:
     '''
     classdocs
