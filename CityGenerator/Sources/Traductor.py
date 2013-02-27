@@ -1,4 +1,5 @@
 
+import bpy
 class Traductor:
     '''
     classdocs
@@ -21,6 +22,24 @@ class Traductor:
         
     def drawField(self, field):
         print("drawField")
+        nameField = 'Name'
+        if(len(field.getBoundaries()) > 2):
+            me = bpy.data.meshes.new(nameField + 'Mesh')
+            ob = bpy.data.objects.new(nameField, me)
+            ob.show_name = False
+            # Link object to scene
+            bpy.context.scene.objects.link(ob)
+            arrayBounds = []
+            for bound in  field.getBoundaries():
+                arrayBounds.append((bound.x, bound.y, bound.z))
+            listFaces = [range(len(field.getBoundaries()))]
+            listFaces.append((()))
+            
+            listVertice = [arrayBounds]
+            listVertice.append([])
+            me.from_pydata(arrayBounds, [],listFaces)
+#            me.from_pydata(((0,0,0),(1,0,0),(1,1,0),(0,1,0)), (), ((0,1,2,3),()))
+            
     def drawNetwork(self, network):
         print("drawNetwork")
     def drawBlock(self, block):
