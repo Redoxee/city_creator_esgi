@@ -1,8 +1,3 @@
-'''
-Created on 27 févr. 2013
-
-@author: Dylan
-'''
 import Coordinates
 from math import acos
 PI = 3.14159

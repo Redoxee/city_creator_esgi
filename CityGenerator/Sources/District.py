@@ -1,13 +1,5 @@
-'''
-Created on 26 févr. 2013
 
-@author: Dylan
-'''
 class District:
-    '''
-    classdocs
-    '''
-
 
     def __init__(self,districtType):
         '''

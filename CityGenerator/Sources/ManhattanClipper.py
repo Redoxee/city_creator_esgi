@@ -1,8 +1,5 @@
-'''
-Created on 26 févr. 2013
 
-@author: Antoine
-'''
+from FieldClipper import FieldClipper
 
 import FieldClipper
 import Coordinates
