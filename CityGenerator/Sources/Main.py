@@ -5,7 +5,7 @@ from Building import Building
 from City import City
 from Coordinates import Coordinates
 from District import District
-from Field import Field, Field
+from Field import Field
 from Network import Network
 from Traductor import Traductor
 
