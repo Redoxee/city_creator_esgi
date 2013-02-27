@@ -10,5 +10,3 @@ def main():
     city = City(field)
     city.serialize()
     return
-
-main()
