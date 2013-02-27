@@ -5,7 +5,7 @@ from Building import Building
 from City import City
 from Coordinates import Coordinates
 from District import District
-from Field import Field, Field
+from Field import Field
 from Network import Network
 from Traductor import Traductor
 
@@ -24,9 +24,9 @@ field.setDistricts([district])
 block = Block()
 
 district.setblocks([block])
-block.canBuild =  True
-building = Building()
-
+block.canBuild = True
+building = Building(districtBoundaries, 50)
+block.setPlots([building])
 
 traductor = Traductor();
 traductor.draw(city)
