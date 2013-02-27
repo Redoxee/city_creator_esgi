@@ -1,5 +1,5 @@
 
-from xml.dom.minidom import parse
+from xml.dom.minidom import Document
 
 class City:
 
@@ -11,21 +11,24 @@ class City:
         if (self.field == None):
             print("impossible serialization")
             return
-        parser = parse(name + ".xml")
-        if (parser.hasChildNodes()):
-            print("impossible serialization : file already exists")
-            return
+        
+        filename = "CityGen" + name + ".xml"
+        
+        doc = Document()
         
         """xml creation"""
-        sField = parser.createElement("field")
+        sField = doc.createElement("field")
         fieldBounds = self.field.getBoundaries()
         for bound in fieldBounds:
-            sBound = parser.createElement("bound");
+            sBound = doc.createElement("bound");
             sBound.setAttribute("x", bound.x)
             sBound.setAttribute("y", bound.y)
             sBound.setAttribute("z", bound.z)
             sField.appendChild(sBound)
-            parser.appendChild(sField)
+            doc.appendChild(sField)
+            
+        f = open(filename, "+w")
+        f.write(doc.toxml())
         return
     
     def deserialize(self):
