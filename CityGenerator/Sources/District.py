@@ -9,13 +9,14 @@ class District:
     '''
 
 
-    def __init__(self):
+    def __init__(self,districtType):
         '''
         Constructor
         '''
         self.boundaries = []
         self.networks = []
         self.blocks = []
+        self.districtType = districtType
         
     def getBoundaries(self):
         return self.boundaries

@@ -10,18 +10,18 @@ class Block:
     '''
 
 
-    def __init__(self):
+    def __init__(self,districtType,canBuild=True):
         '''
         Constructor
         '''
-        self.canBuild = True
-        self.plots = []
+        self.districtType = districtType
+        self.canBuild = canBuild
         
     def getCanBuild(self):
         return self.canBuild
     
     def getPlots(self):
-        return self.plots
+        return
     
-    def setPlots(self, plots):
-        self.plots = plots
+    def setPlots(self,VerticesList):
+        return

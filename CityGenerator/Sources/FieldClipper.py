@@ -10,14 +10,10 @@ class FieldClipper:
     '''
 
 
-    def __init__(self, field):
+    def __init__(self):
         '''
         Constructor
         '''
-        self.field = field
-        
-    def buildDistricts(self):
-        pass
-        
-    def buildBlocks(self, district = None):
+
+    def subdivide(self,polygon):
         pass
