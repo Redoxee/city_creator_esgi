@@ -1,19 +1,6 @@
-'''
-Created on 26 févr. 2013
-
-@author: Antoine
-'''
 import Coordinates
-class Plot:
-    '''
-    classdocs
-    '''
-
-
+class Plot(object):
     def __init__(self, listCorners):
-        '''
-        Constructor
-        '''
         self.setListCorners(listCorners);
     def setListCorners(self, listCorners):
         self.corners = listCorners;

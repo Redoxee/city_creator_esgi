@@ -1,18 +1,7 @@
-'''
-Created on 26 févr. 2013
-
-@author: Antoine
-'''
 
 class Field:
-    '''
-    classdocs
-    '''
 
     def __init__(self, boundaries):
-        '''
-        Constructor
-        '''
         self.boundaries = boundaries
         self.networks = []
         self.districts = []

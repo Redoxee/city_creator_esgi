@@ -1,19 +1,8 @@
-'''
-Created on 26 févr. 2013
-
-@author: Antoine
-'''
 
 class Block:
-    '''
-    classdocs
-    '''
 
 
     def __init__(self):
-        '''
-        Constructor
-        '''
         self.canBuild = True
         self.plots = []
         
