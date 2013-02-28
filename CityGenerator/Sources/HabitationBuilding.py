@@ -1,19 +1,8 @@
-'''
-Created on 26 févr. 2013
 
-@author: Antoine
-'''
-
-import Building
+from Building import Building
 
 class HabitationBuilding(Building):
-    '''
-    classdocs
-    '''
 
 
-    def __init__(self):
-        '''
-        Constructor
-        '''
-        
+    def __init__(self, listCorners, height):
+        Building.__init__(self, listCorners, height)

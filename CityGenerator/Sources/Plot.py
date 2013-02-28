@@ -1,24 +1,11 @@
-'''
-Created on 26 févr. 2013
-
-@author: Antoine
-'''
-import Coordinates
+from Coordinates import Coordinates
 class Plot:
-    '''
-    classdocs
-    '''
-
-
     def __init__(self, listCorners):
-        '''
-        Constructor
-        '''
         self.setListCorners(listCorners);
     def setListCorners(self, listCorners):
         self.corners = listCorners;
         if(len(listCorners) > 0):
-            self.centerPlot = Coordinates()
+            self.centerPlot = Coordinates(0,0,0)
             for i in range(len(listCorners)):
                 self.centerPlot.x += listCorners[i].x
                 self.centerPlot.y += listCorners[i].y

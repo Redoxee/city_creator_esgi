@@ -1,9 +1,5 @@
 
 class Block:
-    '''
-    classdocs
-    '''
-
 
     def __init__(self,districtType,canBuild=True):
         '''
@@ -11,6 +7,7 @@ class Block:
         '''
         self.districtType = districtType
         self.canBuild = canBuild
+        self.plots = []
         
     def getCanBuild(self):
         return self.canBuild
@@ -18,5 +15,5 @@ class Block:
     def getPlots(self):
         return
     
-    def setPlots(self,VerticesList):
-        return
+    def setPlots(self, plots):
+        self.plots = plots

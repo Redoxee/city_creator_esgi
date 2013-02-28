@@ -1,7 +1,11 @@
 
 class District:
 
+<<<<<<< HEAD
     def __init__(self,districtType):
+=======
+    def __init__(self):
+>>>>>>> branch 'master' of https://github.com/Redoxee/city_creator_esgi.git
         '''
         Constructor
         '''

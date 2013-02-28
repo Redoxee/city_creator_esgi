@@ -1,9 +1,5 @@
 
 class FieldClipper:
-    '''
-    classdocs
-    '''
-
 
     def __init__(self):
         '''

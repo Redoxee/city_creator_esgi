@@ -1,19 +1,7 @@
-'''
-Created on 26 févr. 2013
 
-@author: Antoine
-'''
-
-import Area
+from Area import Area
 
 class Park(Area):
-    '''
-    classdocs
-    '''
 
-
-    def __init__(self):
-        '''
-        Constructor
-        '''
-        
+    def __init__(self, listCorners):
+        Area.__init__(self, listCorners)
