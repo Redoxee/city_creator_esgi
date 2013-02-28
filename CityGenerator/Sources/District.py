@@ -1,13 +1,18 @@
 
 class District:
 
+<<<<<<< HEAD
+    def __init__(self,districtType):
+=======
     def __init__(self):
+>>>>>>> branch 'master' of https://github.com/Redoxee/city_creator_esgi.git
         '''
         Constructor
         '''
         self.boundaries = []
         self.networks = []
         self.blocks = []
+        self.districtType = districtType
         
     def getBoundaries(self):
         return self.boundaries
