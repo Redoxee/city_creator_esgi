@@ -15,11 +15,11 @@ road = Network([Coordinates(50, 0, 0), Coordinates(50, 100, 0)])
 field.setNetworks([road])
 
 districtBoundaries = [Coordinates(10, 10, 0), Coordinates(40, 10, 0), Coordinates(40, 90, 0), Coordinates(10, 90, 0)]
-district = District()
+district = District(())
 district.setBoundaries(districtBoundaries)
 field.setDistricts([district])
 
-block = Block()
+block = Block(())
 
 district.setblocks([block])
 block.canBuild = True
