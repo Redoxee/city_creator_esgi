@@ -18,30 +18,39 @@ class Traductor:
         return
 
 
-    
-        
-    def drawField(self, field):
-        print("drawField")
-        nameField = 'Name'
-        if(len(field.getBoundaries()) > 2):
-            me = bpy.data.meshes.new(nameField + 'Mesh')
-            ob = bpy.data.objects.new(nameField, me)
+    def drawPolygone(self,boundaries,namePoly):
+        if(len(boundaries) > 2):
+            me = bpy.data.meshes.new(namePoly + 'Mesh')
+            ob = bpy.data.objects.new(namePoly, me)
             ob.show_name = False
             # Link object to scene
             bpy.context.scene.objects.link(ob)
             arrayBounds = []
-            for bound in  field.getBoundaries():
+            for bound in  boundaries:
                 arrayBounds.append((bound.x, bound.y, bound.z))
-            listFaces = [range(len(field.getBoundaries()))]
+            listFaces = [range(len(boundaries))]
             listFaces.append((()))
             
             listVertice = [arrayBounds]
             listVertice.append([])
             me.from_pydata(arrayBounds, [],listFaces)
-#            me.from_pydata(((0,0,0),(1,0,0),(1,1,0),(0,1,0)), (), ((0,1,2,3),()))
+            
+    def drawField(self, field):
+        print("drawField")
+        nameField = 'Name'
+        self.drawPolygone(field.getBoundaries(), nameField)
+
             
     def drawNetwork(self, network):
         print("drawNetwork")
+        if len(network) > 0:
+            for way in network:
+                self.drawWay(way)
+    def drawWay(self,road):
+        print("drawWays")
+        if len(road) > 0:
+            for wayPoint in road:
+                print ("drawwaypoints")
     def drawBlock(self, block):
         print("drawBlock")
     def drawPlot(self, plot):
