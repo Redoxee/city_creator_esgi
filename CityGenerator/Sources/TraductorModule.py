@@ -45,7 +45,8 @@ class Traductor:
         print("drawNetwork")
         if len(network) > 0:
             for way in network:
-                self.drawWay(way)
+                if  not way == None:
+                    self.drawWay(way)
     def drawWay(self,road):
         print("drawWays")
         if len(road) > 0:

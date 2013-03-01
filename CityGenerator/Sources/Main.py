@@ -5,9 +5,10 @@ from Coordinates import Coordinates
 from District import District
 from Field import Field
 from Network import Network
-from Traductor import Traductor
-
-
+from imp import reload
+import TraductorModule
+reload(TraductorModule)
+from TraductorModule import Traductor 
 boundaries = [Coordinates(0, 0, 0), Coordinates(100, 0, 0), Coordinates(100, 200, 0), Coordinates(100, 100, 0), Coordinates(0, 100, 0)]
 field = Field(boundaries)
 city = City(field)
