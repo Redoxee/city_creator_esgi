@@ -1,4 +1,3 @@
-
 class Field:
 
     def __init__(self, boundaries):
@@ -29,4 +28,17 @@ class Field:
     
     def setDistricts(self, districts):
         self.districts = districts
-        
+       
+    def asXml(self, doc):
+        sField = doc.createElement(self.getXmlName())
+        for bound in self.boundaries:
+            sField.appendChild(bound.asXml(doc))
+        for network in self.networks:
+            sField.appendChild(network.asXml(doc))
+        for district in self.districts:
+            sField.appendChild(district.asXml(doc))
+        return sField
+    
+    def getXmlName(self):
+        return "field"
+    

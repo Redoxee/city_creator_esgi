@@ -6,6 +6,17 @@ class Building(Plot):
         '''
         Constructor
         '''
-        Plot.__init__(self, listCorners)
+        super().__init__(listCorners)
         self.height = height
         return
+    
+    def asXml(self, doc):
+        sPlot = super().asXml(doc)
+        sPlot.setAttribute("height", str(self.height))
+        return sPlot
+    
+    def getListCorners(self):
+        return super().getListCorners()
+        
+    def getXmlName(self):
+        return "building"

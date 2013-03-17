@@ -33,3 +33,17 @@ class District:
     
     def setblocks(self, blocks):
         self.blocks = blocks
+        
+    def asXml(self, doc):
+        sDistrict = doc.createElement(self.getXmlName())
+        sDistrict.setAttribute("type", str(type))
+        for bound in self.boundaries:
+            sDistrict.appendChild(bound.asXml(doc))
+        for network in self.networks:
+            sDistrict.appendChild(network.asXml(doc))
+        for block in self.blocks:
+            sDistrict.appendChild(block.asXml(doc))
+        return sDistrict
+
+    def getXmlName(self):
+        return "district"

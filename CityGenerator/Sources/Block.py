@@ -17,3 +17,14 @@ class Block:
     
     def setPlots(self, plots):
         self.plots = plots
+
+    def asXml(self, doc):
+        sBlock = doc.createElement(self.getXmlName())
+        sBlock.setAttribute("type", str(self.districtType))
+        sBlock.setAttribute("canBuild", str(self.canBuild))
+        for plot in self.plots:
+            sBlock.appendChild(plot.asXml(doc))
+        return sBlock
+    
+    def getXmlName(self):
+        return "block"

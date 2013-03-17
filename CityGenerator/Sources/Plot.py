@@ -1,7 +1,13 @@
 from Coordinates import Coordinates
+
 class Plot:
+    
     def __init__(self, listCorners):
         self.setListCorners(listCorners);
+        
+    def getListCorners(self):
+        return self.corners
+        
     def setListCorners(self, listCorners):
         self.corners = listCorners;
         if(len(listCorners) > 0):
@@ -13,3 +19,12 @@ class Plot:
             self.centerPlot.x /= len(listCorners)
             self.centerPlot.y /= len(listCorners)
             self.centerPlot.z /= len(listCorners)
+
+    def asXml(self, doc):
+        sPlot = doc.createElement(self.getXmlName())
+        for corner in self.getListCorners():
+            sPlot.appendChild(corner.asXml(doc))
+        return sPlot
+    
+    def getXmlName(self):
+        pass
