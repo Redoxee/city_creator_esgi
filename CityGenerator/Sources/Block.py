@@ -13,7 +13,7 @@ class Block:
         return self.canBuild
     
     def getPlots(self):
-        return
+        return self.plots
     
     def setPlots(self, plots):
         self.plots = plots

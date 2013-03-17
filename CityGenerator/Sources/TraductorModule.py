@@ -1,5 +1,6 @@
 
 import bpy
+from Coordinates import Coordinates
 class Traductor:
     '''
     classdocs
@@ -18,7 +19,7 @@ class Traductor:
         return
 
 
-    def drawPolygone(self,boundaries,namePoly):
+    def drawPolygone(self, boundaries, namePoly):
         if(len(boundaries) > 2):
             me = bpy.data.meshes.new(namePoly + 'Mesh')
             ob = bpy.data.objects.new(namePoly, me)
@@ -33,7 +34,7 @@ class Traductor:
             
             listVertice = [arrayBounds]
             listVertice.append([])
-            me.from_pydata(arrayBounds, [],listFaces)
+            me.from_pydata(arrayBounds, [], listFaces)
             
     def drawField(self, field):
         print("drawField")
@@ -43,14 +44,22 @@ class Traductor:
             
     def drawNetwork(self, network):
         print("drawNetwork")
+        wayPoint1 = None
+        wayPoint2 = None
         if len(network) > 0:
-            for way in network:
-                self.drawWay(way)
-    def drawWay(self,road):
-        print("drawWays")
-        if len(road) > 0:
-            for wayPoint in road:
-                print ("drawwaypoints")
+            for road in network:
+                if len(road.getwayPoints()) > 1:
+                    print("draw a road")
+                    for way in road.getwayPoints():
+                        wayPoint1 = wayPoint2
+                        wayPoint2 = way
+                        if not wayPoint1 == None:
+                            normal = Coordinates(wayPoint2.x - wayPoint1.x, wayPoint2.x - wayPoint1.x, wayPoint1.z)
+                            point1 = Coordinates(wayPoint1.x - normal.x , wayPoint1.y - normal.y, wayPoint1.z)
+                            point2 = Coordinates(wayPoint2.x - normal.x , wayPoint2.y - normal.y, wayPoint2.z)
+                            point3 = Coordinates(wayPoint2.x + normal.x , wayPoint2.y + normal.y, wayPoint2.z)
+                            point4 = Coordinates(wayPoint1.x + normal.x , wayPoint1.y + normal.y, wayPoint1.z)
+                            self.drawPolygone([point1, point2, point3, point4], "road")
     def drawBlock(self, block):
         print("drawBlock")
     def drawPlot(self, plot):
