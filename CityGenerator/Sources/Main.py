@@ -12,7 +12,7 @@ from TraductorModule import Traductor
 boundaries = [Coordinates(0, 0, 0), Coordinates(100, 0, 0), Coordinates(100, 100, 0), Coordinates(0, 100, 0)]
 field = Field(boundaries)
 city = City(field)
-road = Network([Coordinates(50, 0, 5), Coordinates(50, 50, 5)])
+road = Network([Coordinates(50, 0, 5), Coordinates(50, 25, 5), Coordinates(100, 25, 5)])
 field.setNetworks([road])
 
 districtBoundaries = [Coordinates(10, 10, 0), Coordinates(40, 10, 0), Coordinates(40, 90, 0), Coordinates(10, 90, 0)]
