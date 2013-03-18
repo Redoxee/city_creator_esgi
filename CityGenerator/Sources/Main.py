@@ -4,16 +4,18 @@ from City import City
 from Coordinates import Coordinates
 from District import District
 from Field import Field
-from Network import Network
+from Road import Road
+
 from imp import reload
 import TraductorModule
 reload(TraductorModule)
 from TraductorModule import Traductor 
+
 boundaries = [Coordinates(0, 0, 0), Coordinates(100, 0, 0), Coordinates(100, 100, 0), Coordinates(0, 100, 0)]
 field = Field(boundaries)
 city = City(field)
-road = Network([Coordinates(50, 0, 5), Coordinates(50, 25, 5), Coordinates(100, 25, 5)])
-field.setNetworks([road])
+road = Road([Coordinates(50, 0, 5), Coordinates(50, 50, 5)])
+field.addNetwork(road)
 
 districtBoundaries = [Coordinates(10, 10, 0), Coordinates(40, 10, 0), Coordinates(40, 90, 0), Coordinates(10, 90, 0)]
 district = District(0)
