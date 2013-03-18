@@ -1,3 +1,4 @@
+
 from Block import Block
 from City import City
 from Coordinates import Coordinates
@@ -46,5 +47,3 @@ traductor.draw(city)
 city.serialize()
 
 deserializedCity = City.deserialize("CityGen/" + city.getName() + ".cgxml")
-
-
