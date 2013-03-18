@@ -13,5 +13,17 @@ class Coordinates:
         sCoordinate.setAttribute("z", str(self.z))
         return sCoordinate
     
-    def getXmlName(self):
+    @staticmethod 
+    def getXmlName():
         return "coordinate"
+    
+    @staticmethod
+    def parseXml(node):
+        coordinates = Coordinates()
+        coordinates.x = float(node.getAttribute("x"))
+        coordinates.y = float(node.getAttribute("y"))
+        coordinates.z = float(node.getAttribute("z"))
+        return coordinates
+    
+    def __str__(self):
+        return "(" + self.x + ", " + self.y + ", " + self.z + ")"

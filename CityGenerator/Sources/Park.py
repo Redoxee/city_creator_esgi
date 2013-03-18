@@ -3,13 +3,14 @@ from Area import Area
 
 class Park(Area):
 
-    def __init__(self, listCorners):
-        Area.__init__(self, listCorners)
+    def __init__(self, corners):
+        super().__init__(corners)
 
     def asXml(self, doc):
-        return super(Park, self).asXml(doc)
+        return super().asXml(doc)
     
-    def getXmlName(self):
+    @staticmethod 
+    def getXmlName():
         return "park"
     
     def getListCorners(self):

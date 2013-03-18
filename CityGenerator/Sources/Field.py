@@ -1,6 +1,9 @@
+from Coordinates import Coordinates
+from Network import Network
+from District import District
 class Field:
 
-    def __init__(self, boundaries):
+    def __init__(self, boundaries = []):
         self.boundaries = boundaries
         self.networks = []
         self.districts = []
@@ -10,6 +13,9 @@ class Field:
         
     def setBoundaries(self, boundaries):
         self.boundaries = boundaries
+    
+    def addBoundary(self, boundary):
+        self.boundaries.append(boundary)
     
     def getNetworks(self):
         return self.networks
@@ -22,6 +28,9 @@ class Field:
     
     def clearNetwork(self):
         self.networks = []
+        
+    def addDistrict(self, district):
+        self.districts.append(district)
     
     def getDistricts(self):
         return self.districts
@@ -39,6 +48,19 @@ class Field:
             sField.appendChild(district.asXml(doc))
         return sField
     
-    def getXmlName(self):
+    @staticmethod
+    def parseXml(node):
+        field = Field()
+        for child in node.childNodes:
+            if child.tagName == Coordinates.getXmlName():
+                field.addBoundary(Coordinates.parseXml(child))
+            if child.tagName == Network.getXmlName():
+                field.addNetwork(Network.parseXml(child))
+            if child.tagName == District.getXmlName():
+                field.addDistrict(District.parseXml(child))
+        return field
+    
+    @staticmethod 
+    def getXmlName():
         return "field"
     

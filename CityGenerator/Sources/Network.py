@@ -1,16 +1,33 @@
 
-class Network:
-    def __init__(self, wayPoints):
+
+class Network:
+    def __init__(self, wayPoints=[]):
         self.wayPoints = wayPoints
         
     def getWayPoints(self):
         return self.wayPoints
     
-    def asXml(self, doc):
-        sNetwork = doc.createElement(self.getXmlName())
+    def addWayPoint(self, wayPoint):
+        self.wayPoints.append(wayPoint)
+        
+    def wayPointsAsXml(self, doc, node):
         for wayPoint in self.getWayPoints():
-            sNetwork.appendChild(wayPoint.asXml(doc))
+            node.appendChild(wayPoint.asXml(doc))
+    
+    def asXml(self, doc, child):
+        sNetwork = doc.createElement(Network.getXmlName())
+        sNetwork.appendChild(child)
         return sNetwork
             
-    def getXmlName(self):
-        pass
+    @staticmethod 
+    def getXmlName():
+        return "network"
+
+    @staticmethod
+    def parseXml(node):
+        from Road import Road
+        child = node.firstChild
+        road = None
+        if (child.tagName == Road.getXmlName()):
+            road = Road.parseXml(child)
+        return road

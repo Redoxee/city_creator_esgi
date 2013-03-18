@@ -1,7 +1,10 @@
+from Coordinates import Coordinates
+from Network import Network
+from Block import Block
 
 class District:
 
-    def __init__(self,districtType):
+    def __init__(self,districtType=0):
         '''
         Constructor
         '''
@@ -9,6 +12,9 @@ class District:
         self.networks = []
         self.blocks = []
         self.districtType = districtType
+        
+    def addBoundary(self, boundary):
+        self.boundaries.append(boundary)
         
     def getBoundaries(self):
         return self.boundaries
@@ -27,6 +33,9 @@ class District:
     
     def clearNetwork(self):
         self.networks = []
+        
+    def addBlock(self, block):
+        self.blocks.append(block)
     
     def getblocks(self):
         return self.blocks
@@ -44,6 +53,21 @@ class District:
         for block in self.blocks:
             sDistrict.appendChild(block.asXml(doc))
         return sDistrict
-
-    def getXmlName(self):
+    
+    @staticmethod 
+    def getXmlName():
         return "district"
+    
+    @staticmethod
+    def parseXml(node):
+        district = District()
+        #district.districtType = int(node.getAttribute("type"))
+        for child in node.childNodes:
+            if child.tagName == Coordinates.getXmlName():
+                district.addBoundary(Coordinates.parseXml(child))
+            if child.tagName == Network.getXmlName():
+                district.addNetwork(Network.parseXml(child))
+            if child.tagName == Block.getXmlName():
+                district.addBlock(Block.parseXml(child))
+        return district
+    
