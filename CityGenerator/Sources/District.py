@@ -45,7 +45,7 @@ class District:
         
     def asXml(self, doc):
         sDistrict = doc.createElement(self.getXmlName())
-        sDistrict.setAttribute("type", str(type))
+        sDistrict.setAttribute("type", str(self.districtType))
         for bound in self.boundaries:
             sDistrict.appendChild(bound.asXml(doc))
         for network in self.networks:
@@ -61,7 +61,7 @@ class District:
     @staticmethod
     def parseXml(node):
         district = District()
-        #district.districtType = int(node.getAttribute("type"))
+        district.districtType = int(node.getAttribute("type"))
         for child in node.childNodes:
             if child.tagName == Coordinates.getXmlName():
                 district.addBoundary(Coordinates.parseXml(child))

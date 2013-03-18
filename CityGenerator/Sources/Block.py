@@ -25,8 +25,8 @@ class Block:
 
     def asXml(self, doc):
         sBlock = doc.createElement(Block.getXmlName())
-        sBlock.setAttribute("blockType", str(self.blockType))
         sBlock.setAttribute("canBuild", str(self.canBuild))
+        sBlock.setAttribute("type", str(self.blockType))
         for plot in self.plots:
             sBlock.appendChild(plot.asXml(doc))
         return sBlock
@@ -39,6 +39,7 @@ class Block:
     def parseXml(node):
         block = Block()
         block.canBuild = ast.literal_eval(node.getAttribute("canBuild"))
+        block.blockType = int(node.getAttribute("type"))
         for child in node.childNodes:
             block.addPlot(Plot.parseXml(child))
         return block
