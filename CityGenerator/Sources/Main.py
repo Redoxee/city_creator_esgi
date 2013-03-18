@@ -29,3 +29,5 @@ block.setPlots([building])
 
 traductor = Traductor();
 traductor.draw(city)
+
+city.serialize("firstExempleCity")
