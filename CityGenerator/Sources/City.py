@@ -52,7 +52,7 @@ class City:
     @staticmethod
     def deserialize(fileName):
         """ Function which creates and return a city from an xml file"""
-        doc = parse(fileName)
+        doc = parse("./CityGen/" + fileName)
         return City.parseXml(doc.firstChild)
     
     def __str__(self):
