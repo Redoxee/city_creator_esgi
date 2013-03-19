@@ -1,6 +1,7 @@
 from xml.dom.minidom import Document, parse
 
 from Field import Field
+import os
 
 class City:
 
@@ -14,6 +15,9 @@ class City:
         if (self.field == None):
             print("impossible serialization")
             return
+        
+        if not os.path.exists("./CityGen"):
+            os.makedirs("./CityGen")
         
         filename = "CityGen/" + self.name + ".cgxml"
         f = open(filename, "+w")
