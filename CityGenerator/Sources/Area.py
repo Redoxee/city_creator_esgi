@@ -5,7 +5,7 @@ class Area(Plot):
     '''
     classdocs
     '''
-
+
     def __init__(self, corners=[]):
         '''
         Constructor

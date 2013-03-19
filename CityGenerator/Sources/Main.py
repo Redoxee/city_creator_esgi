@@ -1,19 +1,18 @@
 
+from Area import Area
 from Block import Block
 from City import City
 from Coordinates import Coordinates
 from District import District
 from Field import Field
-from Road import Road
-from HabitationBuilding import HabitationBuilding
 from FunctionBuilding import FunctionBuilding
-from Area import Area
-"""
+from HabitationBuilding import HabitationBuilding
+from Road import Road
+
 from imp import reload
 import TraductorModule
 reload(TraductorModule)
 from TraductorModule import Traductor 
-"""
 
 boundaries = [Coordinates(0, 0, 0), Coordinates(100, 0, 0), Coordinates(100, 100, 0), Coordinates(0, 100, 0)]
 field = Field(boundaries)
@@ -39,13 +38,12 @@ for i in range(10):
 
 district.setblocks(blocks)
 
-"""
+
 traductor = Traductor();
 traductor.draw(city)
-"""
 
-city.serialize()
+#
+#city.serialize()
+#deserializedCity = City.deserialize("CityGen/" + city.getName() + ".cgxml")
 
-deserializedCity = City.deserialize("CityGen/" + city.getName() + ".cgxml")
-
-print(deserializedCity)
+#print(deserializedCity)
