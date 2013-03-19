@@ -42,8 +42,7 @@ district.setblocks(blocks)
 traductor = Traductor();
 traductor.draw(city)
 
-#
-#city.serialize()
-#deserializedCity = City.deserialize("CityGen/" + city.getName() + ".cgxml")
+city.serialize()
+deserializedCity = City.deserialize(city.getName() + ".cgxml")
 
-#print(deserializedCity)
+print(deserializedCity)
