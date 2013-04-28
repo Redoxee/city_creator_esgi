@@ -25,5 +25,8 @@ class Coordinates:
         coordinates.z = float(node.getAttribute("z"))
         return coordinates
     
+    def __eq__(self, c):
+        return self.x == c.x and self.y == c.y and self.z == c.z
+    
     def __str__(self):
         return "(" + self.x + ", " + self.y + ", " + self.z + ")"
